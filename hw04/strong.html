@@ -18,6 +18,10 @@
             pointer-events: none;
             opacity: 0;
         }
+
+        svg {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -25,8 +29,8 @@
     <script>
         // 設定 SVG 大小
         var margin = {top: 10, right: 30, bottom: 30, left: 60},
-            width = 860 - margin.left - margin.right,
-            height = 460 - margin.top - margin.bottom;
+            width = 750 - margin.left - margin.right,
+            height = 350 - margin.top - margin.bottom;
 
         // 加入 svg 到 body
         var svg = d3.select("body").append("svg")
@@ -113,7 +117,7 @@
                         "<div style='margin-bottom:5px; font-weight:bold;'>" + d.Student + "</div>" +
                         "<img src='img/" + d.Student + "' alt='Handwriting' width='120' height='120' style='border:1px solid #ccc;'>"
                     )
-                    .style("left", (d3.event.pageX + 10) + "px") // 稍微往右偏一點，避免擋到滑鼠
+                    .style("left", (d3.event.pageX - 140) + "px") // 稍微往右偏一點，避免擋到滑鼠
                     .style("top", (d3.event.pageY - 28) + "px");
                 })
                 .on("mouseout", function(d) {
