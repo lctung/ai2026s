@@ -43,7 +43,6 @@
 
         var svg = d3.select("body").append("svg")
             .attr("width", "100%")  // 使用百分比讓它填滿 iframe
-            .attr("height", "100%")
             .attr("viewBox", "0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom))
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
