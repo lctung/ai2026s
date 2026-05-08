@@ -37,7 +37,7 @@
         // 設定 SVG 大小
         var margin = {top: 20, right: 30, bottom: 50, left: 60},
             width = 1200 - margin.left - margin.right,
-            height = 760 - margin.top - margin.bottom;
+            height = 720 - margin.top - margin.bottom;
 
         // 加入 svg 到 body
         d3.select("body").style("margin", "0");
@@ -62,15 +62,12 @@
             var x = d3.scaleLinear()
                 .domain([0.3, 1]) // ssim
                 .range([ 0, width ]);
-            svg.append("g")
-                .attr("transform", "translate(0," + height + ")")
-                .call(d3.axisBottom(x));
 
             svg.append("g")
                 .attr("transform", "translate(0," + height + ")")
                 .call(d3.axisBottom(x))
-            // 加入x軸標籤
-            .append("text")
+                // 加入x軸標籤
+                .append("text")
                 .attr("class", "axis-label")
                 .attr("x", width) // 將標籤放置在軸的末端
                 .attr("y", -20) // 在X軸線下方一點的位置
@@ -81,9 +78,7 @@
             var y = d3.scaleLinear()
                 .domain([0, 0.7]) // lpips
                 .range([ height, 0]);
-            
-            svg.append("g")
-                .call(d3.axisLeft(y));
+
 
             // 加入Y軸以及標籤
             svg.append("g")
