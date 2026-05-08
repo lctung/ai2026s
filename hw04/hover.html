@@ -8,9 +8,8 @@
         #tooltip {
             position: absolute;
             text-align: center;
-            width: 12vw;       
-            min-width: 120px;  
-            max-width: 250px;   
+            width: 84px;       
+            height: auto;   
             height: auto;      
             padding: 8px;
             font: 12px sans-serif;
@@ -151,8 +150,8 @@
                     var tooltipHeight = tooltipNode.offsetHeight;
 
                     tooltip
-                        .style("left", (d3.event.pageX - tooltipWidth - 15) + "px") // 往左位移
-                        .style("top", (d3.event.pageY - tooltipHeight - 15) + "px"); // 往上位移
+                        .style("left", (d3.event.pageX - tooltipWidth - 8) + "px") // 往左位移
+                        .style("top", (d3.event.pageY - tooltipHeight - 8) + "px"); // 往上位移
                 })
                 .on("mouseout", function(d) {
                     tooltip.transition()
